@@ -97,12 +97,18 @@ export const createEnquiry = asyncHandler(async (req: Request, res: Response) =>
 
 export const updateEnquiry = asyncHandler(async (req: Request, res: Response) => {
   const { name, email, phone, userType, interest, message } = req.body;
+  const updates: Record<string, unknown> = { name, email, phone, userType, interest, message };
 
-  const enquiry = await Enquiry.findByIdAndUpdate(
-    req.params.id,
-    { name, email, phone, userType, interest, message },
-    { new: true, runValidators: true, omitUndefined: true }
-  );
+  Object.keys(updates).forEach((key) => {
+    if (updates[key] === undefined) {
+      delete updates[key];
+    }
+  });
+
+  const enquiry = await Enquiry.findByIdAndUpdate(req.params.id, updates, {
+    new: true,
+    runValidators: true,
+  });
 
   if (!enquiry) {
     throw new AppError("Enquiry not found", 404);
