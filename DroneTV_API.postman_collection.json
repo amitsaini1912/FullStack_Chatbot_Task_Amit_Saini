@@ -1,0 +1,104 @@
+{
+  "info": {
+    "name": "DroneTV AI Support & Lead Assistant API",
+    "description": "REST API collection for the DroneTV Enquiry backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000/api" },
+    { "key": "enquiryId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/health", "host": ["{{baseUrl}}"], "path": ["health"] }
+      }
+    },
+    {
+      "name": "List Enquiries",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/enquiries?search=&userType=&status=&page=1&limit=20",
+          "host": ["{{baseUrl}}"],
+          "path": ["enquiries"],
+          "query": [
+            { "key": "search", "value": "" },
+            { "key": "userType", "value": "" },
+            { "key": "status", "value": "" },
+            { "key": "page", "value": "1" },
+            { "key": "limit", "value": "20" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Enquiry By Id",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/enquiries/{{enquiryId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["enquiries", "{{enquiryId}}"]
+        }
+      }
+    },
+    {
+      "name": "Create Enquiry",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "{{baseUrl}}/enquiries", "host": ["{{baseUrl}}"], "path": ["enquiries"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Riya Sharma\",\n  \"email\": \"riya.sharma@example.com\",\n  \"phone\": \"9876543210\",\n  \"userType\": \"Student\",\n  \"interest\": \"Drone Pilot Training Course\",\n  \"message\": \"I would like to know the fee structure and duration of the course.\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Update Enquiry",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": {
+          "raw": "{{baseUrl}}/enquiries/{{enquiryId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["enquiries", "{{enquiryId}}"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"message\": \"Updated message content.\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Update Enquiry Status",
+      "request": {
+        "method": "PATCH",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": {
+          "raw": "{{baseUrl}}/enquiries/{{enquiryId}}/status",
+          "host": ["{{baseUrl}}"],
+          "path": ["enquiries", "{{enquiryId}}", "status"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Contacted\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Delete Enquiry",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseUrl}}/enquiries/{{enquiryId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["enquiries", "{{enquiryId}}"]
+        }
+      }
+    }
+  ]
+}
