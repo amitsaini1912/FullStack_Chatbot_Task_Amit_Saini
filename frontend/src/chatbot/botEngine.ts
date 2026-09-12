@@ -188,11 +188,18 @@ export function getBotReply(userText: string): BotReply {
     return FALLBACK_REPLY;
   }
 
+  let bestMatch: { reply: BotReply; keywordLength: number } | null = null;
+
   for (const intent of intents) {
-    if (intent.keywords.some((keyword) => matchesKeyword(normalized, keyword))) {
-      return intent.reply;
+    for (const keyword of intent.keywords) {
+      if (
+        matchesKeyword(normalized, keyword) &&
+        (!bestMatch || keyword.length > bestMatch.keywordLength)
+      ) {
+        bestMatch = { reply: intent.reply, keywordLength: keyword.length };
+      }
     }
   }
 
-  return FALLBACK_REPLY;
+  return bestMatch ? bestMatch.reply : FALLBACK_REPLY;
 }
