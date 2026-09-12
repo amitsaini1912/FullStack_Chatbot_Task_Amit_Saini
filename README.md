@@ -237,14 +237,26 @@ available at [`DroneTV_API.postman_collection.json`](./DroneTV_API.postman_colle
 
 ## Screenshots
 
-> Add screenshots of the following pages here before submission:
+**Landing page**
+![Home page](./docs/screenshots/home.png)
 
-- `docs/screenshots/home.png` - Landing page
-- `docs/screenshots/services.png` - Services page
-- `docs/screenshots/courses.png` - Courses page
-- `docs/screenshots/chatbot.png` - Chatbot in action
-- `docs/screenshots/contact.png` - Enquiry form
-- `docs/screenshots/admin.png` - Admin dashboard
+**Services**
+![Services page](./docs/screenshots/services.png)
+
+**Courses & Training**
+![Courses page](./docs/screenshots/courses.png)
+
+**Contact / Enquiry form**
+![Contact page](./docs/screenshots/contact.png)
+
+**Chatbot in action**
+![Chatbot](./docs/screenshots/chatbot.png)
+
+**Admin dashboard**
+![Admin dashboard](./docs/screenshots/admin.png)
+
+**Admin - enquiry detail modal**
+![Admin detail modal](./docs/screenshots/admin-detail-modal.png)
 
 ---
 
