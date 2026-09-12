@@ -6,8 +6,6 @@ admin dashboard for managing incoming leads.
 
 Built as an internship assignment by **Amit Kumar Saini**.
 
-> Live demo: _add deployed frontend/backend URLs here once hosted_
-
 ---
 
 ## Features
