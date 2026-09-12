@@ -1,0 +1,221 @@
+.hero {
+  position: relative;
+  padding: 96px 0 80px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0, 212, 255, 0.12), transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(124, 92, 255, 0.12), transparent 40%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 18px;
+}
+
+.titleAccent {
+  color: var(--color-primary);
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.ctaRow {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.heroVisual {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  box-shadow: var(--shadow-glow);
+}
+
+.heroVisual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-border-light);
+  margin: 16px;
+  animation: spin 18s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stats {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.statLabel {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.about {
+  padding: 80px 0;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.sectionEyebrow {
+  color: var(--color-secondary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.aboutText {
+  color: var(--color-text-muted);
+}
+
+.featureList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.featureItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.featureIcon {
+  font-size: 1.4rem;
+}
+
+.featureTitle {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.featureDesc {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.ctaBanner {
+  margin: 0 0 80px;
+  padding: 56px 0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(124, 92, 255, 0.12));
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.ctaBannerTitle {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.ctaBannerText {
+  color: var(--color-text-muted);
+  max-width: 500px;
+  margin: 0 auto 24px;
+}
+
+.ctaBannerRow {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .heroInner,
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroVisual {
+    max-width: 320px;
+    margin: 0 auto;
+    font-size: 4rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+}
