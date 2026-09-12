@@ -1,0 +1,52 @@
+.launcher {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #04101a;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.launcher:hover {
+  transform: scale(1.06);
+}
+
+.panel {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  width: 380px;
+  max-width: calc(100vw - 32px);
+  height: 560px;
+  max-height: calc(100vh - 140px);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  z-index: 200;
+}
+
+@media (max-width: 480px) {
+  .panel {
+    right: 16px;
+    left: 16px;
+    width: auto;
+    bottom: 92px;
+  }
+
+  .launcher {
+    right: 16px;
+    bottom: 16px;
+  }
+}

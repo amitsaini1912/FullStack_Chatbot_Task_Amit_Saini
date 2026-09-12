@@ -1,0 +1,19 @@
+.section {
+  padding: 40px 0 60px;
+}
+
+.wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  height: 640px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    height: 70vh;
+  }
+}
