@@ -4,7 +4,7 @@
   "description": "Backend API for DroneTV AI Support & Lead Assistant",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "nodemon src/server.ts",
+    "dev": "nodemon",
     "build": "tsc -p tsconfig.json",
     "start": "node dist/server.js",
     "seed": "ts-node src/seed/seedEnquiries.ts",
